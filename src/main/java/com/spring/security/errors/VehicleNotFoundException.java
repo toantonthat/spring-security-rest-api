@@ -1,4 +1,4 @@
-package com.spring.errors;
+package com.spring.security.errors;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

@@ -21,6 +21,7 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper = false)
 public class Brand extends AbstractAuditingEntity<Long> implements Serializable {
 	private static final long serialVersionUID = 1L;
-	@Column
+	
+	@Column(name = "name")
 	private String name;
 }

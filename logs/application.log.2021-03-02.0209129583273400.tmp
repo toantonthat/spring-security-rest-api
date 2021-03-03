@@ -1,0 +1,367 @@
+2021-03-02 00:01:18.291  INFO 13588 --- [main] com.spring.security.Application          : Starting Application on LAPTOP-LDGTTLNO with PID 13588 (D:\eclipse\eclipse-workspace-2021\spring-security\target\classes started by ToanTT in D:\eclipse\eclipse-workspace-2021\spring-security)
+2021-03-02 00:01:18.299  INFO 13588 --- [main] com.spring.security.Application          : No active profile set, falling back to default profiles: default
+2021-03-02 00:01:18.734  INFO 13588 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-02 00:01:18.779  INFO 13588 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37ms. Found 2 JPA repository interfaces.
+2021-03-02 00:01:19.429  INFO 13588 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2021-03-02 00:01:19.435  INFO 13588 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-02 00:01:19.435  INFO 13588 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-03-02 00:01:19.500  INFO 13588 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-02 00:01:19.500  INFO 13588 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1155 ms
+2021-03-02 00:01:19.633  INFO 13588 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-02 00:01:19.665  INFO 13588 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-03-02 00:01:19.751  INFO 13588 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-02 00:01:19.822  INFO 13588 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-02 00:01:19.823  WARN 13588 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2021-03-02 00:01:19.984  INFO 13588 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-02 00:01:19.996  INFO 13588 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2021-03-02 00:01:20.042  INFO 13588 --- [main] o.h.e.boot.internal.EnversServiceImpl    : Envers integration enabled? : true
+2021-03-02 00:01:20.559  INFO 13588 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-02 00:01:20.566  INFO 13588 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-02 00:01:20.802  WARN 13588 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-02 00:01:20.847  INFO 13588 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-02 00:01:21.271  INFO 13588 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+2021-03-02 00:01:21.276  INFO 13588 --- [main] com.spring.security.Application          : Started Application in 3.294 seconds (JVM running for 3.636)
+2021-03-02 00:01:36.547  INFO 13588 --- [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-02 00:01:36.547  INFO 13588 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-02 00:01:36.551  INFO 13588 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2021-03-02 00:01:36.643 ERROR 13588 --- [http-nio-8085-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.http.converter.HttpMessageConversionException: Type definition error: [simple type, class org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor]; nested exception is com.fasterxml.jackson.databind.exc.InvalidDefinitionException: No serializer found for class org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS) (through reference chain: java.util.ArrayList[0]->com.spring.security.entity.Vehicle["brand"]->com.spring.security.entity.Brand$HibernateProxy$o7L7F5E9["hibernateLazyInitializer"])] with root cause
+
+com.fasterxml.jackson.databind.exc.InvalidDefinitionException: No serializer found for class org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS) (through reference chain: java.util.ArrayList[0]->com.spring.security.entity.Vehicle["brand"]->com.spring.security.entity.Brand$HibernateProxy$o7L7F5E9["hibernateLazyInitializer"])
+	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:77) ~[jackson-databind-2.11.4.jar:2.11.4]
+	at com.fasterxml.jackson.databind.SerializerProvider.reportBadDefinition(SerializerProvider.java:1277) ~[jackson-databind-2.11.4.jar:2.11.4]
+	at com.fasterxml.jackson.databind.DatabindContext.reportBadDefinition(DatabindContext.java:400) ~[jackson-databind-2.11.4.jar:2.11.4]
+	at com.fasterxml.jackson.databind.ser.impl.UnknownSerializer.failForEmpty(UnknownSerializer.java:71) ~[jackson-databind-2.11.4.jar:2.11.4]
+	at com.fasterxml.jackson.databind.ser.impl.UnknownSerializer.serialize(UnknownSerializer.java:33) ~[jackson-databind-2.11.4.jar:2.11.4]
+	at com.fasterxml.jackson.databind.ser.BeanPropertyWriter.serializeAsField(BeanPropertyWriter.java:728) ~[jackson-databind-2.11.4.jar:2.11.4]
+	at com.fasterxml.jackson.databind.ser.std.BeanSerializerBase.serializeFields(BeanSerializerBase.java:755) ~[jackson-databind-2.11.4.jar:2.11.4]
+	at com.fasterxml.jackson.databind.ser.BeanSerializer.serialize(BeanSerializer.java:178) ~[jackson-databind-2.11.4.jar:2.11.4]
+	at com.fasterxml.jackson.databind.ser.BeanPropertyWriter.serializeAsField(BeanPropertyWriter.java:728) ~[jackson-databind-2.11.4.jar:2.11.4]
+	at com.fasterxml.jackson.databind.ser.std.BeanSerializerBase.serializeFields(BeanSerializerBase.java:755) ~[jackson-databind-2.11.4.jar:2.11.4]
+	at com.fasterxml.jackson.databind.ser.BeanSerializer.serialize(BeanSerializer.java:178) ~[jackson-databind-2.11.4.jar:2.11.4]
+	at com.fasterxml.jackson.databind.ser.impl.IndexedListSerializer.serializeContents(IndexedListSerializer.java:119) ~[jackson-databind-2.11.4.jar:2.11.4]
+	at com.fasterxml.jackson.databind.ser.impl.IndexedListSerializer.serialize(IndexedListSerializer.java:79) ~[jackson-databind-2.11.4.jar:2.11.4]
+	at com.fasterxml.jackson.databind.ser.impl.IndexedListSerializer.serialize(IndexedListSerializer.java:18) ~[jackson-databind-2.11.4.jar:2.11.4]
+	at com.fasterxml.jackson.databind.ser.DefaultSerializerProvider._serialize(DefaultSerializerProvider.java:480) ~[jackson-databind-2.11.4.jar:2.11.4]
+	at com.fasterxml.jackson.databind.ser.DefaultSerializerProvider.serializeValue(DefaultSerializerProvider.java:319) ~[jackson-databind-2.11.4.jar:2.11.4]
+	at com.fasterxml.jackson.databind.ObjectWriter$Prefetch.serialize(ObjectWriter.java:1516) ~[jackson-databind-2.11.4.jar:2.11.4]
+	at com.fasterxml.jackson.databind.ObjectWriter.writeValue(ObjectWriter.java:1006) ~[jackson-databind-2.11.4.jar:2.11.4]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.writeInternal(AbstractJackson2HttpMessageConverter.java:346) ~[spring-web-5.2.12.RELEASE.jar:5.2.12.RELEASE]
+	at org.springframework.http.converter.AbstractGenericHttpMessageConverter.write(AbstractGenericHttpMessageConverter.java:104) ~[spring-web-5.2.12.RELEASE.jar:5.2.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:277) ~[spring-webmvc-5.2.12.RELEASE.jar:5.2.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor.handleReturnValue(HttpEntityMethodProcessor.java:219) ~[spring-webmvc-5.2.12.RELEASE.jar:5.2.12.RELEASE]
+	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:82) ~[spring-web-5.2.12.RELEASE.jar:5.2.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:123) ~[spring-webmvc-5.2.12.RELEASE.jar:5.2.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878) ~[spring-webmvc-5.2.12.RELEASE.jar:5.2.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792) ~[spring-webmvc-5.2.12.RELEASE.jar:5.2.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.12.RELEASE.jar:5.2.12.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.12.RELEASE.jar:5.2.12.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.12.RELEASE.jar:5.2.12.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.12.RELEASE.jar:5.2.12.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.12.RELEASE.jar:5.2.12.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626) ~[tomcat-embed-core-9.0.41.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.12.RELEASE.jar:5.2.12.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.41.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.12.RELEASE.jar:5.2.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.12.RELEASE.jar:5.2.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.12.RELEASE.jar:5.2.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.12.RELEASE.jar:5.2.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.12.RELEASE.jar:5.2.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.12.RELEASE.jar:5.2.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:888) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_192]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_192]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_192]
+
+2021-03-02 00:02:17.068  INFO 13588 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-02 00:02:17.069  INFO 13588 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-02 00:02:17.070  INFO 13588 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-03-02 00:02:17.075  INFO 13588 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-03-02 00:02:21.425  INFO 25360 --- [main] com.spring.security.Application          : Starting Application on LAPTOP-LDGTTLNO with PID 25360 (D:\eclipse\eclipse-workspace-2021\spring-security\target\classes started by ToanTT in D:\eclipse\eclipse-workspace-2021\spring-security)
+2021-03-02 00:02:21.427  INFO 25360 --- [main] com.spring.security.Application          : No active profile set, falling back to default profiles: default
+2021-03-02 00:02:21.844  INFO 25360 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-02 00:02:21.885  INFO 25360 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36ms. Found 2 JPA repository interfaces.
+2021-03-02 00:02:22.545  INFO 25360 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2021-03-02 00:02:22.555  INFO 25360 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-02 00:02:22.555  INFO 25360 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-03-02 00:02:22.619  INFO 25360 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-02 00:02:22.620  INFO 25360 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1159 ms
+2021-03-02 00:02:22.753  INFO 25360 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-02 00:02:22.784  INFO 25360 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-03-02 00:02:22.867  INFO 25360 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-02 00:02:22.939  INFO 25360 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-02 00:02:22.940  WARN 25360 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2021-03-02 00:02:23.103  INFO 25360 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-02 00:02:23.116  INFO 25360 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2021-03-02 00:02:23.155  INFO 25360 --- [main] o.h.e.boot.internal.EnversServiceImpl    : Envers integration enabled? : true
+2021-03-02 00:02:23.675  INFO 25360 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-02 00:02:23.682  INFO 25360 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-02 00:02:23.920  WARN 25360 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-02 00:02:23.963  INFO 25360 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-02 00:02:24.371  INFO 25360 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+2021-03-02 00:02:24.379  INFO 25360 --- [main] com.spring.security.Application          : Started Application in 3.236 seconds (JVM running for 3.538)
+2021-03-02 00:02:36.425  INFO 25360 --- [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-02 00:02:36.425  INFO 25360 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-02 00:02:36.429  INFO 25360 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2021-03-02 00:02:56.105  INFO 25360 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-02 00:02:56.107  INFO 25360 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-02 00:02:56.107  INFO 25360 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-03-02 00:02:56.114  INFO 25360 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-03-02 00:03:03.437  INFO 25036 --- [main] com.spring.security.Application          : Starting Application on LAPTOP-LDGTTLNO with PID 25036 (D:\eclipse\eclipse-workspace-2021\spring-security\target\classes started by ToanTT in D:\eclipse\eclipse-workspace-2021\spring-security)
+2021-03-02 00:03:03.441  INFO 25036 --- [main] com.spring.security.Application          : No active profile set, falling back to default profiles: default
+2021-03-02 00:03:04.245  INFO 25036 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-02 00:03:04.325  INFO 25036 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 70ms. Found 2 JPA repository interfaces.
+2021-03-02 00:03:05.500  INFO 25036 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2021-03-02 00:03:05.517  INFO 25036 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-02 00:03:05.518  INFO 25036 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-03-02 00:03:05.624  INFO 25036 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-02 00:03:05.625  INFO 25036 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2123 ms
+2021-03-02 00:03:05.824  INFO 25036 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-02 00:03:05.873  INFO 25036 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-03-02 00:03:06.007  INFO 25036 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-02 00:03:06.109  INFO 25036 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-02 00:03:06.111  WARN 25036 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2021-03-02 00:03:06.357  INFO 25036 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-02 00:03:06.379  INFO 25036 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2021-03-02 00:03:06.442  INFO 25036 --- [main] o.h.e.boot.internal.EnversServiceImpl    : Envers integration enabled? : true
+2021-03-02 00:03:07.241  INFO 25036 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-02 00:03:07.250  INFO 25036 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-02 00:03:07.664  WARN 25036 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-02 00:03:07.735  INFO 25036 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-02 00:03:08.433  INFO 25036 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+2021-03-02 00:03:08.443  INFO 25036 --- [main] com.spring.security.Application          : Started Application in 5.576 seconds (JVM running for 6.348)
+2021-03-02 00:03:17.576  INFO 25036 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-02 00:03:17.582  INFO 25036 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-02 00:03:17.583  INFO 25036 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-03-02 00:03:17.588  INFO 25036 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-03-02 00:03:24.942  INFO 23396 --- [main] com.spring.security.Application          : Starting Application on LAPTOP-LDGTTLNO with PID 23396 (D:\eclipse\eclipse-workspace-2021\spring-security\target\classes started by ToanTT in D:\eclipse\eclipse-workspace-2021\spring-security)
+2021-03-02 00:03:24.947  INFO 23396 --- [main] com.spring.security.Application          : No active profile set, falling back to default profiles: default
+2021-03-02 00:03:25.720  INFO 23396 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-02 00:03:25.792  INFO 23396 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 62ms. Found 2 JPA repository interfaces.
+2021-03-02 00:03:26.814  INFO 23396 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2021-03-02 00:03:26.823  INFO 23396 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-02 00:03:26.824  INFO 23396 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-03-02 00:03:26.916  INFO 23396 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-02 00:03:26.916  INFO 23396 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1908 ms
+2021-03-02 00:03:27.126  INFO 23396 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-02 00:03:27.176  INFO 23396 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-03-02 00:03:27.303  INFO 23396 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-02 00:03:27.399  INFO 23396 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-02 00:03:27.401  WARN 23396 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2021-03-02 00:03:27.631  INFO 23396 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-02 00:03:27.650  INFO 23396 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2021-03-02 00:03:27.708  INFO 23396 --- [main] o.h.e.boot.internal.EnversServiceImpl    : Envers integration enabled? : true
+2021-03-02 00:03:28.372  INFO 23396 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-02 00:03:28.379  INFO 23396 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-02 00:03:28.778  WARN 23396 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-02 00:03:28.843  INFO 23396 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-02 00:03:29.480  INFO 23396 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+2021-03-02 00:03:29.490  INFO 23396 --- [main] com.spring.security.Application          : Started Application in 5.152 seconds (JVM running for 5.888)
+2021-03-02 00:08:32.488  INFO 23396 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-02 00:08:32.489  INFO 23396 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-02 00:08:32.490  INFO 23396 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-03-02 00:08:32.494  INFO 23396 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-03-02 00:09:19.635  INFO 26048 --- [main] com.spring.security.Application          : Starting Application on LAPTOP-LDGTTLNO with PID 26048 (D:\eclipse\eclipse-workspace-2021\spring-security\target\classes started by ToanTT in D:\eclipse\eclipse-workspace-2021\spring-security)
+2021-03-02 00:09:19.638  INFO 26048 --- [main] com.spring.security.Application          : No active profile set, falling back to default profiles: default
+2021-03-02 00:09:20.128  INFO 26048 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-02 00:09:20.174  INFO 26048 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40ms. Found 2 JPA repository interfaces.
+2021-03-02 00:09:20.842  INFO 26048 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2021-03-02 00:09:20.848  INFO 26048 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-02 00:09:20.849  INFO 26048 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-03-02 00:09:20.919  INFO 26048 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-02 00:09:20.919  INFO 26048 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1238 ms
+2021-03-02 00:09:21.053  INFO 26048 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-02 00:09:21.084  INFO 26048 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-03-02 00:09:21.168  INFO 26048 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-02 00:09:21.245  INFO 26048 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-02 00:09:21.246  WARN 26048 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2021-03-02 00:09:21.413  INFO 26048 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-02 00:09:21.426  INFO 26048 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2021-03-02 00:09:21.466  INFO 26048 --- [main] o.h.e.boot.internal.EnversServiceImpl    : Envers integration enabled? : true
+2021-03-02 00:09:21.935  INFO 26048 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-02 00:09:21.940  INFO 26048 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-02 00:09:22.179  WARN 26048 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-02 00:09:22.224  INFO 26048 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-02 00:09:22.635  INFO 26048 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+2021-03-02 00:09:22.641  INFO 26048 --- [main] com.spring.security.Application          : Started Application in 3.297 seconds (JVM running for 3.617)
+2021-03-02 00:12:51.776  INFO 26048 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-02 00:12:51.777  INFO 26048 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-02 00:12:51.778  INFO 26048 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-03-02 00:12:51.782  INFO 26048 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-03-02 00:12:57.304  INFO 26372 --- [main] com.spring.security.Application          : Starting Application on LAPTOP-LDGTTLNO with PID 26372 (D:\eclipse\eclipse-workspace-2021\spring-security\target\classes started by ToanTT in D:\eclipse\eclipse-workspace-2021\spring-security)
+2021-03-02 00:12:57.307  INFO 26372 --- [main] com.spring.security.Application          : No active profile set, falling back to default profiles: default
+2021-03-02 00:12:57.808  INFO 26372 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-02 00:12:57.858  INFO 26372 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43ms. Found 2 JPA repository interfaces.
+2021-03-02 00:12:58.670  INFO 26372 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2021-03-02 00:12:58.678  INFO 26372 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-02 00:12:58.679  INFO 26372 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-03-02 00:12:58.758  INFO 26372 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-02 00:12:58.758  INFO 26372 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1411 ms
+2021-03-02 00:12:58.924  INFO 26372 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-02 00:12:58.965  INFO 26372 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-03-02 00:12:59.065  INFO 26372 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-02 00:12:59.148  INFO 26372 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-02 00:12:59.149  WARN 26372 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2021-03-02 00:12:59.334  INFO 26372 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-02 00:12:59.348  INFO 26372 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2021-03-02 00:12:59.398  INFO 26372 --- [main] o.h.e.boot.internal.EnversServiceImpl    : Envers integration enabled? : true
+2021-03-02 00:12:59.928  INFO 26372 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-02 00:12:59.933  INFO 26372 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-02 00:13:00.274  WARN 26372 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-02 00:13:00.348  INFO 26372 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-02 00:13:00.816  INFO 26372 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 8d1d16b7-eb7f-4f41-8777-98200f5e4811
+
+2021-03-02 00:13:00.883  INFO 26372 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@10bdfbcc, org.springframework.security.web.context.SecurityContextPersistenceFilter@5ad6f98e, org.springframework.security.web.header.HeaderWriterFilter@2dc21583, org.springframework.security.web.csrf.CsrfFilter@1a0d313, org.springframework.security.web.authentication.logout.LogoutFilter@30798137, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@770cae59, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@4b3ad7ca, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@25b74370, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@7f012923, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3316527e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@64ec1459, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@15e8c040, org.springframework.security.web.session.SessionManagementFilter@60816371, org.springframework.security.web.access.ExceptionTranslationFilter@47c96f2c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6ace919c]
+2021-03-02 00:13:00.917  INFO 26372 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+2021-03-02 00:13:00.926  INFO 26372 --- [main] com.spring.security.Application          : Started Application in 3.995 seconds (JVM running for 4.401)
+2021-03-02 00:13:03.894  INFO 26372 --- [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-02 00:13:03.895  INFO 26372 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-02 00:13:03.900  INFO 26372 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2021-03-02 00:37:01.913  INFO 26372 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-02 00:37:01.914  INFO 26372 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-02 00:37:01.915  INFO 26372 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-03-02 00:37:01.919  INFO 26372 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-03-02 00:37:10.264  INFO 12640 --- [main] com.spring.security.Application          : Starting Application on LAPTOP-LDGTTLNO with PID 12640 (D:\eclipse\eclipse-workspace-2021\spring-security\target\classes started by ToanTT in D:\eclipse\eclipse-workspace-2021\spring-security)
+2021-03-02 00:37:10.267  INFO 12640 --- [main] com.spring.security.Application          : No active profile set, falling back to default profiles: default
+2021-03-02 00:37:10.742  INFO 12640 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-02 00:37:10.799  INFO 12640 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51ms. Found 2 JPA repository interfaces.
+2021-03-02 00:37:11.504  INFO 12640 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2021-03-02 00:37:11.515  INFO 12640 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-02 00:37:11.515  INFO 12640 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-03-02 00:37:11.587  INFO 12640 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-02 00:37:11.587  INFO 12640 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1283 ms
+2021-03-02 00:37:11.730  INFO 12640 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-02 00:37:11.762  INFO 12640 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-03-02 00:37:11.845  INFO 12640 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-02 00:37:11.917  INFO 12640 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-02 00:37:11.923  WARN 12640 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2021-03-02 00:37:12.086  INFO 12640 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-02 00:37:12.099  INFO 12640 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2021-03-02 00:37:12.141  INFO 12640 --- [main] o.h.e.boot.internal.EnversServiceImpl    : Envers integration enabled? : true
+2021-03-02 00:37:12.614  INFO 12640 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-02 00:37:12.620  INFO 12640 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-02 00:37:12.857  WARN 12640 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-02 00:37:12.905  INFO 12640 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-02 00:37:13.339  INFO 12640 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 34b943b1-68da-4fcc-834c-0aa4f14f3808
+
+2021-03-02 00:37:13.399  INFO 12640 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3b0ed98a, org.springframework.security.web.context.SecurityContextPersistenceFilter@2c77344f, org.springframework.security.web.header.HeaderWriterFilter@5ed65e4b, org.springframework.security.web.csrf.CsrfFilter@6785c9fa, org.springframework.security.web.authentication.logout.LogoutFilter@79cdf2d4, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7f305f34, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@5fde1d64, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@12448de1, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@20fcea37, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@297bd171, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6e46891d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2b35c7aa, org.springframework.security.web.session.SessionManagementFilter@40cf6254, org.springframework.security.web.access.ExceptionTranslationFilter@3f06ebe0, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6ce2e079]
+2021-03-02 00:37:13.429  INFO 12640 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+2021-03-02 00:37:13.435  INFO 12640 --- [main] com.spring.security.Application          : Started Application in 3.502 seconds (JVM running for 3.842)
+2021-03-02 22:19:46.186  INFO 23920 --- [main] com.spring.security.Application          : Starting Application on LAPTOP-LDGTTLNO with PID 23920 (D:\eclipse\eclipse-workspace-2021\spring-security\target\classes started by ToanTT in D:\eclipse\eclipse-workspace-2021\spring-security)
+2021-03-02 22:19:46.288  INFO 23920 --- [main] com.spring.security.Application          : No active profile set, falling back to default profiles: default
+2021-03-02 22:19:46.767  INFO 23920 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-02 22:19:46.816  INFO 23920 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43ms. Found 2 JPA repository interfaces.
+2021-03-02 22:19:47.520  INFO 23920 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2021-03-02 22:19:47.526  INFO 23920 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-02 22:19:47.527  INFO 23920 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-03-02 22:19:47.610  INFO 23920 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-02 22:19:47.610  INFO 23920 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1289 ms
+2021-03-02 22:19:47.802  INFO 23920 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-02 22:19:47.845  INFO 23920 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-03-02 22:19:47.939  INFO 23920 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-02 22:19:48.013  INFO 23920 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-02 22:19:48.015  WARN 23920 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2021-03-02 22:19:48.188  INFO 23920 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-02 22:19:48.200  INFO 23920 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2021-03-02 22:19:48.249  INFO 23920 --- [main] o.h.e.boot.internal.EnversServiceImpl    : Envers integration enabled? : true
+2021-03-02 22:19:48.760  INFO 23920 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-02 22:19:48.765  INFO 23920 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-02 22:19:48.952  INFO 23920 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: d93dd095-b169-4d10-8559-1a0a855363ea
+
+2021-03-02 22:19:49.045  WARN 23920 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-02 22:19:49.093  INFO 23920 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-02 22:19:49.603  INFO 23920 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2036f83, org.springframework.security.web.context.SecurityContextPersistenceFilter@455da438, org.springframework.security.web.header.HeaderWriterFilter@46c662f2, org.springframework.security.web.csrf.CsrfFilter@745926c3, org.springframework.security.web.authentication.logout.LogoutFilter@58cda03f, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2d73e8c4, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@4cc26df, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@68b3248a, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@7f305f34, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@438aaa9f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@297bd171, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5e158f33, org.springframework.security.web.session.SessionManagementFilter@10b67f54, org.springframework.security.web.access.ExceptionTranslationFilter@1109730f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1f71e024]
+2021-03-02 22:19:49.657  INFO 23920 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+2021-03-02 22:19:49.664  INFO 23920 --- [main] com.spring.security.Application          : Started Application in 3.78 seconds (JVM running for 4.119)
+2021-03-02 23:31:37.683  INFO 23920 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-02 23:31:37.684  INFO 23920 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-02 23:31:37.686  INFO 23920 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-03-02 23:31:37.691  INFO 23920 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-03-02 23:31:42.807  INFO 21540 --- [main] com.spring.security.Application          : Starting Application on LAPTOP-LDGTTLNO with PID 21540 (D:\eclipse\eclipse-workspace-2021\spring-security\target\classes started by ToanTT in D:\eclipse\eclipse-workspace-2021\spring-security)
+2021-03-02 23:31:42.810  INFO 21540 --- [main] com.spring.security.Application          : No active profile set, falling back to default profiles: default
+2021-03-02 23:31:43.315  INFO 21540 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-02 23:31:43.362  INFO 21540 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39ms. Found 2 JPA repository interfaces.
+2021-03-02 23:31:44.050  INFO 21540 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2021-03-02 23:31:44.058  INFO 21540 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-02 23:31:44.058  INFO 21540 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-03-02 23:31:44.132  INFO 21540 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-02 23:31:44.133  INFO 21540 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1282 ms
+2021-03-02 23:31:44.269  INFO 21540 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-02 23:31:44.302  INFO 21540 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-03-02 23:31:44.381  INFO 21540 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-02 23:31:44.445  INFO 21540 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-02 23:31:44.446  WARN 21540 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2021-03-02 23:31:44.615  INFO 21540 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-02 23:31:44.628  INFO 21540 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2021-03-02 23:31:44.671  INFO 21540 --- [main] o.h.e.boot.internal.EnversServiceImpl    : Envers integration enabled? : true
+2021-03-02 23:31:45.155  INFO 21540 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-02 23:31:45.161  INFO 21540 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-02 23:31:45.351  INFO 21540 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: c4e0d0bf-703c-4f82-9920-016b948d199a
+
+2021-03-02 23:31:45.445  WARN 21540 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-02 23:31:45.495  INFO 21540 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-02 23:31:45.971  INFO 21540 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2b35c7aa, org.springframework.security.web.context.SecurityContextPersistenceFilter@297bd171, org.springframework.security.web.header.HeaderWriterFilter@40cf6254, org.springframework.security.web.csrf.CsrfFilter@194b9783, org.springframework.security.web.authentication.logout.LogoutFilter@18b40fe6, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@601d295, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@984de01, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@6dd20ec9, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@48fc0211, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4cc26df, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5fde1d64, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@20dd5870, org.springframework.security.web.session.SessionManagementFilter@2c77344f, org.springframework.security.web.access.ExceptionTranslationFilter@5ed65e4b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@260d48f5]
+2021-03-02 23:31:46.006  INFO 21540 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+2021-03-02 23:31:46.012  INFO 21540 --- [main] com.spring.security.Application          : Started Application in 3.537 seconds (JVM running for 3.989)
+2021-03-02 23:32:57.815  INFO 21540 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-02 23:32:57.817  INFO 21540 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-02 23:32:57.819  INFO 21540 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-03-02 23:32:57.824  INFO 21540 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-03-02 23:33:02.578  INFO 12624 --- [main] com.spring.security.Application          : Starting Application on LAPTOP-LDGTTLNO with PID 12624 (D:\eclipse\eclipse-workspace-2021\spring-security\target\classes started by ToanTT in D:\eclipse\eclipse-workspace-2021\spring-security)
+2021-03-02 23:33:02.580  INFO 12624 --- [main] com.spring.security.Application          : No active profile set, falling back to default profiles: default
+2021-03-02 23:33:03.006  INFO 12624 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-02 23:33:03.049  INFO 12624 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37ms. Found 2 JPA repository interfaces.
+2021-03-02 23:33:03.739  INFO 12624 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2021-03-02 23:33:03.745  INFO 12624 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-02 23:33:03.745  INFO 12624 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-03-02 23:33:03.810  INFO 12624 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-02 23:33:03.810  INFO 12624 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1194 ms
+2021-03-02 23:33:03.957  INFO 12624 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-02 23:33:03.987  INFO 12624 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-03-02 23:33:04.073  INFO 12624 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-02 23:33:04.144  INFO 12624 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-02 23:33:04.145  WARN 12624 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2021-03-02 23:33:04.302  INFO 12624 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-02 23:33:04.314  INFO 12624 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2021-03-02 23:33:04.351  INFO 12624 --- [main] o.h.e.boot.internal.EnversServiceImpl    : Envers integration enabled? : true
+2021-03-02 23:33:04.819  INFO 12624 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-02 23:33:04.824  INFO 12624 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-02 23:33:04.998  INFO 12624 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 15294f29-b5a4-4f4d-9fc7-41d0c1f70e22
+
+2021-03-02 23:33:05.075  WARN 12624 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-02 23:33:05.121  INFO 12624 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-02 23:33:05.595  INFO 12624 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@21280cbb, org.springframework.security.web.context.SecurityContextPersistenceFilter@48632f69, org.springframework.security.web.header.HeaderWriterFilter@1e471884, org.springframework.security.web.csrf.CsrfFilter@455da438, org.springframework.security.web.authentication.logout.LogoutFilter@7dd3981e, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3ae2702a, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@79cdf2d4, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@1cc708a7, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@134d7ffa, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5350ab17, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3b362f1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@995ad50, org.springframework.security.web.session.SessionManagementFilter@543b0737, org.springframework.security.web.access.ExceptionTranslationFilter@f4f843f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@35e07e19]
+2021-03-02 23:33:05.627  INFO 12624 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+2021-03-02 23:33:05.634  INFO 12624 --- [main] com.spring.security.Application          : Started Application in 3.36 seconds (JVM running for 3.697)

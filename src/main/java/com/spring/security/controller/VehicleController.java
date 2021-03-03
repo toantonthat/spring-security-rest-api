@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.spring.errors.VehicleNotFoundException;
 import com.spring.security.entity.Vehicle;
+import com.spring.security.errors.VehicleNotFoundException;
 import com.spring.security.model.VehicleForm;
 import com.spring.security.repository.VehicleRepository;
 
