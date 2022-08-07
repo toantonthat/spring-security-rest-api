@@ -106,7 +106,6 @@ public class AuthController {
 			List<String> roles = authentication.getAuthorities().stream()
 					.map(GrantedAuthority::getAuthority)
 					.collect(Collectors.toList());
-
 			Map<Object, Object> model = new HashMap<>();
 			model.put("username", username);
 			model.put("roles", roles);

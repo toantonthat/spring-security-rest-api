@@ -44,7 +44,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public PasswordEncoder passwordEncoder() {
         return PasswordEncoderFactories.createDelegatingPasswordEncoder();
     }
-	
+
+	@Autowired
+	private AuthEntryPointJwt unauthorizedHandler;
+
 //	@Bean
 //	public UserDetailsService userDetailsService() {
 //	    return super.userDetailsService();
@@ -93,21 +96,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http
         .httpBasic().disable()
 		.cors().and().csrf().disable()
-
+		.exceptionHandling().authenticationEntryPoint(unauthorizedHandler)
+		.and()
         .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
         .and()
             .authorizeRequests()
             .antMatchers("/auth/**").permitAll()
-//			.antMatchers("/v1/**").permitAll()
-
-//            .antMatchers(HttpMethod.GET, "/vehicles/**").permitAll()
-//            .antMatchers(HttpMethod.DELETE, "/vehicles/**").hasRole("ADMIN")
-//            .antMatchers(HttpMethod.GET, "/v1/vehicles/**").permitAll()
             .anyRequest().authenticated()
         .and()
         .apply(new JwtConfigurer(jwtTokenProvider));
-
-		//http.addFilterBefore(jwtTokenProvider, UsernamePasswordAuthenticationFilter.class);
 		//@formatter:on
 	}
 }
