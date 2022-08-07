@@ -9,7 +9,10 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -21,13 +24,21 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import com.spring.security.jwt.JwtConfigurer;
 import com.spring.security.jwt.JwtTokenProvider;
 import com.spring.security.repository.UserRepository;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
+@EnableWebSecurity
+@EnableGlobalMethodSecurity(
+		prePostEnabled = true
+)
 @ComponentScan(value = { "com.spring.security.*" })
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	private JwtTokenProvider jwtTokenProvider;
+
+	@Autowired
+	private UserDetailsService userDetailsService;
 	
 	@Bean
     public PasswordEncoder passwordEncoder() {
@@ -70,23 +81,33 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			return new UsernamePasswordAuthenticationToken(username, null, user.getAuthorities());
 		};
 	}
+
+	@Override
+	public void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
+		authenticationManagerBuilder.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
+	}
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		//@formatter:off
 		http
         .httpBasic().disable()
-        .csrf().disable()
+		.cors().and().csrf().disable()
+
         .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
         .and()
             .authorizeRequests()
-            .antMatchers("/auth/signin").permitAll()
-            .antMatchers(HttpMethod.GET, "/vehicles/**").permitAll()
-            .antMatchers(HttpMethod.DELETE, "/vehicles/**").hasRole("ADMIN")
-            .antMatchers(HttpMethod.GET, "/v1/vehicles/**").permitAll()
+            .antMatchers("/auth/**").permitAll()
+//			.antMatchers("/v1/**").permitAll()
+
+//            .antMatchers(HttpMethod.GET, "/vehicles/**").permitAll()
+//            .antMatchers(HttpMethod.DELETE, "/vehicles/**").hasRole("ADMIN")
+//            .antMatchers(HttpMethod.GET, "/v1/vehicles/**").permitAll()
             .anyRequest().authenticated()
         .and()
         .apply(new JwtConfigurer(jwtTokenProvider));
+
+		//http.addFilterBefore(jwtTokenProvider, UsernamePasswordAuthenticationFilter.class);
 		//@formatter:on
 	}
 }

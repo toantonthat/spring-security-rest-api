@@ -2,7 +2,12 @@ package com.spring.security.config;
 
 import java.time.Instant;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Set;
 
+import com.spring.security.entity.Role;
+import com.spring.security.enums.ERole;
+import com.spring.security.repository.RoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
@@ -34,9 +39,12 @@ public class DataInitializer implements CommandLineRunner {
 	
 	@Autowired
 	private PasswordEncoder passwordEncoder;
+
+	@Autowired
+	private RoleRepository roleRepository;
 	
 	private static long brandId = 0L;
-	
+
 	@Override
 	public void run(String... args) throws Exception {
 		log.debug("initializing vehicles data...");
@@ -64,12 +72,22 @@ public class DataInitializer implements CommandLineRunner {
 				this.vehicleRepository.saveAndFlush(vehicle);
 			});
 		}
-		
+		if (this.roleRepository.count() == 0) {
+			Arrays.stream(ERole.values()).forEach(v -> {
+				Role role = Role.builder().name(v).build();
+				role.setCreatedBy("toantt");
+				role.setCreatedDate(Instant.now());
+				role.setDeleted(false);
+				role.setVersion(1L);
+				this.roleRepository.saveAndFlush(role);
+			});
+		}
+
 		if (userRepository.count() == 0) {
 			User user = User.builder()
 					.username("toantt")
 					.password(this.passwordEncoder.encode("123456"))
-					.roles(Arrays.asList("ROLE_USER"))
+					.roles(Collections.singleton(roleRepository.findByName(ERole.ROLE_USER).get()))
 					.build();
 			user.setCreatedBy("toantt");
 			user.setCreatedDate(Instant.now());
@@ -79,7 +97,7 @@ public class DataInitializer implements CommandLineRunner {
 			User admin = User.builder()
 					.username("admin")
 					.password(this.passwordEncoder.encode("123456"))
-					.roles(Arrays.asList("ROLE_ADMIN"))
+					.roles(Collections.singleton(roleRepository.findByName(ERole.ROLE_ADMIN).get()))
 					.build();
 			admin.setCreatedBy("toantt");
 			admin.setCreatedDate(Instant.now());

@@ -6,9 +6,10 @@ spring:
      driverClassName: com.mysql.jdbc.Driver
      url: jdbc:mysql://localhost:3306/test?useSSL=false&serverTimezone=UTC
      username: root
-     password:
+     password: root
   jpa:
     hibernate:
+       dialect: org.hibernate.dialect.MySQLDialect
        ddl-auto: update
     generate-ddl: true
     show-sql: true

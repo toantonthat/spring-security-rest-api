@@ -1,15 +1,9 @@
 package com.spring.security.entity;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
-import javax.persistence.Column;
-import javax.persistence.ElementCollection;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 
 import org.springframework.security.core.GrantedAuthority;
@@ -41,13 +35,19 @@ public class User extends AbstractAuditingEntity<Long> implements UserDetails {
 	@Column(name = "password")
 	private String password;
 
-	@ElementCollection(fetch = FetchType.EAGER)
-	@Builder.Default
-	private List<String> roles = new ArrayList<>();
+//	@ElementCollection(fetch = FetchType.EAGER)
+//	@Builder.Default
+//	private List<String> roles = new ArrayList<>();
+
+	@ManyToMany(fetch = FetchType.LAZY)
+	@JoinTable(	name = "user_roles",
+			joinColumns = @JoinColumn(name = "user_id"),
+			inverseJoinColumns = @JoinColumn(name = "role_id"))
+	private Set<Role> roles = new HashSet<>();
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return this.roles.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList());
+		return this.roles.stream().map(role -> role.getName().toString()).map(SimpleGrantedAuthority::new).collect(Collectors.toList());
 	}
 
 	@Override

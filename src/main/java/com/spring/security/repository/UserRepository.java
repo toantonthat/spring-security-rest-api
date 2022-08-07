@@ -10,4 +10,5 @@ import com.spring.security.entity.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 	public Optional<User> findByUsername(String username);
+	Boolean existsByUsername(String username);
 }

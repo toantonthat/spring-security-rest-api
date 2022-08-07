@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -33,12 +34,14 @@ public class VehicleController {
 	private VehicleRepository vehicleRepository;
 
 	@GetMapping("")
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	public ResponseEntity<Object> getAll() {
 		return ResponseEntity.ok(this.vehicleRepository.findAll());
 	}
 
 	@PostMapping("")
 	public ResponseEntity<Object> save(@RequestBody VehicleForm form, HttpServletRequest request) {
+
 		Vehicle saved = this.vehicleRepository.save(Vehicle.builder().name(form.getName()).build());
 		return ResponseEntity.created(ServletUriComponentsBuilder.fromContextPath(request).path("/v1/vehicles/{id}")
 				.buildAndExpand(saved.getId()).toUri()).build();

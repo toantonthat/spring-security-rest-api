@@ -28,7 +28,7 @@ public class AbstractAuditingEntity<ID> extends AbstractPersistableEntity<ID> im
 	private static final long serialVersionUID = 1L;
 
 	@CreatedBy
-	@Column(name = "created_by", columnDefinition = "varchar(255) default 'anonymousUser'", nullable = false, length = 50, updatable = false)
+	@Column(name = "created_by", columnDefinition = "varchar(255) default 'anonymousUser'", nullable = true, length = 50, updatable = false)
 	private String createdBy;
 
 	@CreatedDate
