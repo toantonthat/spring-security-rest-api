@@ -22,7 +22,7 @@ public class TestAsyncService2 {
         + Thread.currentThread().getName());
   }
 
-  @Async
+  @Async("threadPoolTaskExecutor")
   public CompletableFuture<String> asyncGetData() throws InterruptedException {
     System.out.println("TestAsyncService2: Execute asyncGetData method asynchronously " + Thread.currentThread()
         .getName());

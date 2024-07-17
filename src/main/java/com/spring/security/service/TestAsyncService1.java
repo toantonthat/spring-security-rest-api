@@ -36,7 +36,7 @@ public class TestAsyncService1 {
     return null;
   }
 
-  @Async
+  @Async("threadPoolTaskExecutor")
   public CompletableFuture<String> asyncGetData() throws InterruptedException {
     System.out.println("TestAsyncService1: Execute asyncGetData method asynchronously " + Thread.currentThread()
         .getName());
