@@ -61,4 +61,15 @@ public class TestController1 {
 
     return result;
   }
+
+  @GetMapping("/async4")
+  public String callAsyncMethod4() throws ExecutionException, InterruptedException {
+    System.out.println("Invoking an callAsyncMethod4 method. "
+        + Thread.currentThread().getName());
+    Future<String> future = asyncService1.asyncMethodWithCustomExecutor();
+    String result = future.get();
+    System.out.println("result " + result);
+
+    return result;
+  }
 }

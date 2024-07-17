@@ -36,11 +36,23 @@ public class TestAsyncService1 {
     return null;
   }
 
-  @Async("threadPoolTaskExecutor")
+  @Async//("threadPoolTaskExecutor")
   public CompletableFuture<String> asyncGetData() throws InterruptedException {
     System.out.println("TestAsyncService1: Execute asyncGetData method asynchronously " + Thread.currentThread()
         .getName());
     Thread.sleep(4000);
     return new AsyncResult<>(super.getClass().getSimpleName() + " response !!! ").completable();
+  }
+
+  @Async("threadPoolTaskExecutor")
+  public CompletableFuture<String> asyncMethodWithCustomExecutor() {
+    // Simulate long-running task
+    try {
+      Thread.sleep(5000);
+      System.out.println("Done");
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+    return CompletableFuture.completedFuture("Async method with custom executor completed");
   }
 }
