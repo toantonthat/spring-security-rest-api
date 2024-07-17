@@ -39,11 +39,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	private UserDetailsService userDetailsService;
-	
+
 	@Bean
-    public PasswordEncoder passwordEncoder() {
-        return PasswordEncoderFactories.createDelegatingPasswordEncoder();
-    }
+	public PasswordEncoder passwordEncoder() {
+		return PasswordEncoderFactories.createDelegatingPasswordEncoder();
+	}
 
 	@Autowired
 	private AuthEntryPointJwt unauthorizedHandler;
@@ -52,20 +52,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //	public UserDetailsService userDetailsService() {
 //	    return super.userDetailsService();
 //	}
-	
+
 //	@Bean
 //	@Override
 //	public AuthenticationManager authenticationManagerBean() throws Exception {
 //		// TODO Auto-generated method stub
 //		return super.authenticationManagerBean();
 //	}
-	
+
 	@Bean("userDetailsService")
 	public UserDetailsService customUserDetailsService(UserRepository repo) {
 		return (userName) -> repo.findByUsername(userName)
 				.orElseThrow(() -> new UsernameNotFoundException("Username: " + userName + " not found"));
 	}
-	
+
 	@Bean
 	public AuthenticationManager customAuthenticationManager(UserDetailsService userDetailsService,
 			PasswordEncoder encoder) {
@@ -89,22 +89,23 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	public void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
 		authenticationManagerBuilder.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
 	}
-	
+
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		//@formatter:off
 		http
-        .httpBasic().disable()
-		.cors().and().csrf().disable()
-		.exceptionHandling().authenticationEntryPoint(unauthorizedHandler)
-		.and()
-        .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-        .and()
-            .authorizeRequests()
-            .antMatchers("/auth/**").permitAll()
-            .anyRequest().authenticated()
-        .and()
-        .apply(new JwtConfigurer(jwtTokenProvider));
+				.httpBasic().disable()
+				.cors().and().csrf().disable()
+				.exceptionHandling().authenticationEntryPoint(unauthorizedHandler)
+				.and()
+				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+				.and()
+				.authorizeRequests()
+				.antMatchers("/auth/**").permitAll()
+				.antMatchers("/test1/**", "/test2/**").permitAll()
+				.anyRequest().authenticated()
+				.and()
+				.apply(new JwtConfigurer(jwtTokenProvider));
 		//@formatter:on
 	}
 }
